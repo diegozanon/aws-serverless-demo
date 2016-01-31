@@ -1,0 +1,15 @@
+{
+  "name": "serverlessDemo",
+  "version": "0.0.1",
+  "description": "A Serverless Project and its Serverless Plugin dependencies.",
+  "author": "me",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/"
+  },
+  "dependencies": {
+    "serverless-cors-plugin": "^0.2.1"
+  }
+}

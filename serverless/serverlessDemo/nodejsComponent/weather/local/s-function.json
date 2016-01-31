@@ -1,0 +1,39 @@
+{
+  "name": "local",
+  "handler": "weather/local/handler.handler",
+  "runtime": "nodejs",
+  "timeout": 6,
+  "memorySize": 1024,
+  "custom": {
+    "excludePatterns": [],
+    "envVars": [],
+    "cors": {
+      "allowOrigin": "*",
+      "allowHeaders": ["Content-Type", "X-Amz-Date", "Authorization", "X-Api-Key"]
+    }
+  },
+  "endpoints": [
+    {
+      "path": "weather/local/{id}",
+      "method": "GET",
+      "authorizationType": "none",
+      "apiKeyRequired": false,
+      "requestParameters": {},
+      "requestTemplates": {
+        "application/json": "{\"id\": \"$input.params('id') \"}"
+      },
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {},
+          "responseTemplates": {},
+          "application/json": ""
+        }
+      }
+    }
+  ]
+}

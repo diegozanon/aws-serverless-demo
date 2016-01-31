@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Weather Info</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style TYPE="text/css">
+      input[type=button] {
+        margin: 10px 0px;
+      }
+      p {
+        margin: 10px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-offset-4 col-xs-4 col-sm-offset-4 col-sm-3 col-md-offset-5 col-md-2 pagination-centered text-center">
+          <h3>Daily Weather</h3>
+          <input id="btn-show" type="button" class="btn btn-primary" value='Show Current'>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-offset-4 col-xs-4 col-sm-offset-4 col-sm-3 col-md-offset-5 col-md-2">
+          <p>Value: <span id="weather-value"></span></p>
+          <a href="http://zanon.io/posts/building-serverless-websites-in-aws-tutorial"><p>source</p></a>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+
+        $('#btn-show').on('click', function() {
+
+            $.ajax({
+              url: "https://vo7lhdeful.execute-api.us-east-1.amazonaws.com/development/weather/local/5",
+              success: function(json) {
+                $("#weather-value").append(json.value + ' ºC');
+              }
+            });
+        });
+      });
+    </script>
+  </body>
+</html>
