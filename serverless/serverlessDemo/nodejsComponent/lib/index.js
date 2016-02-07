@@ -4,10 +4,6 @@
 
 var AWS = require('aws-sdk');
 
-// Need to add the Access Key here, since the Lambda function will need access to connect to the SimpleDB
-// Attention to avoid committing this sensitive data by accident
-AWS.config.update({accessKeyId: 'accessKeyId', secretAccessKey: 'secretAccessKey'});
-
 module.exports.respond = function(event, cb) {
 
   var response = {

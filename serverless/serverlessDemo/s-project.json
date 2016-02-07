@@ -50,6 +50,13 @@
                   "logs:PutLogEvents"
                 ],
                 "Resource": "arn:aws:logs:${region}:*:*"
+              },
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "*"
+                ],
+                "Resource": "arn:aws:sdb:us-east-1:125362663122:domain/Weather"
               }
             ]
           },
