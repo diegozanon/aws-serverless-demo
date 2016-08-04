@@ -36,7 +36,7 @@
         $('#btn-show').on('click', function() {
 
             $.ajax({
-              url: "https://vo7lhdeful.execute-api.us-east-1.amazonaws.com/development/weather/local/5",
+              url: "https://u2pn8tyxyj.execute-api.us-east-1.amazonaws.com/dev/current/5",
               success: function(json) {
                 $("#weather-value").append(json.value + ' ºC');
               }
