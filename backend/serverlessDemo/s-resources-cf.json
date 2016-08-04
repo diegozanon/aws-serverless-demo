@@ -45,6 +45,7 @@
               "Action": [
                 "*"
               ],
+              "Resource": "arn:aws:sdb:us-east-1:[ACCOUNT_ID]:domain/Weather"
             }
           ]
         },

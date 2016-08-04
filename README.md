@@ -5,3 +5,4 @@ The result demo is available at: http://serverless-demo.zanon.io
 
 The tutorial is available at: http://zanon.io/posts/building-serverless-websites-on-aws-tutorial
 
+Note: it uses the Serverless Framework v0.5.
