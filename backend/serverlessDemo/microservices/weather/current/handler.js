@@ -11,9 +11,7 @@ function queryData(query, cb) {
     NextToken: ''
   };
 
-  simpledb.select(params, function(err, data) {
-    return cb(err, data);
-  });
+  simpledb.select(params, cb);
 }
 
 module.exports.handler = function(event, context, cb) {
