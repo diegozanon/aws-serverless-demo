@@ -19,7 +19,7 @@ function queryData(query, cb) {
 module.exports.handler = function(event, context, cb) {
   // sanitize the input confirming that it's a number
   var regionId = Number(event.regionId);
-  var query = "select Value from Weather where ID = " + regionId;
+  var query = `select Value from Weather where ID = '${regionId}'`;
 
   queryData(query, function(err, response) {
     return cb(err, {
