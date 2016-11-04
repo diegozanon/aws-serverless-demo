@@ -1,7 +1,0 @@
-{
-  "name": "serverlessDemo",
-  "custom": {},
-  "plugins": [
-    "serverless-cors-plugin"
-  ]
-}

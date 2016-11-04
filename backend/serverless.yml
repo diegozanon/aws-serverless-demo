@@ -1,0 +1,17 @@
+service: my-serverless-demo
+provider:
+  name: aws
+  runtime: nodejs4.3
+  region: us-east-1
+  iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - 'sdb:Select'
+        Resource: "arn:aws:sdb:${self:provider.region}:*:domain/Weather"
+functions:
+  weather:
+    handler: handler.currentTemperature
+    events:
+      - http: GET weather/temperature
+    memorySize: 128
+    timeout: 10

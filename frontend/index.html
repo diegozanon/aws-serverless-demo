@@ -36,9 +36,9 @@
         $('#btn-show').on('click', function() {
 
             $.ajax({
-              url: "https://9l4ab3ahik.execute-api.us-east-1.amazonaws.com/dev/current/5",
+              url: "https://8w8ctjxkeh.execute-api.us-east-1.amazonaws.com/dev/weather/temperature?id=5",
               success: function(json) {
-                $("#weather-value").append(json.value + ' ºC');
+                $("#weather-value").text(json.temperature + ' ºC').fadeOut('slow').fadeIn('slow');
               }
             });
         });
